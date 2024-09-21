@@ -29,7 +29,7 @@ const APICardList = () => {
 
         const combinedData = numberData.map((number, index) => ({
           img: selectDigimonData[index]?.img,
-          title: number.year ? number.year.toString() : "Año no disponible",
+          title: number.number ? number.number.toString() : "Año no disponible",
           description: number.text,
         }));
 
