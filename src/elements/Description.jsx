@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./description.scss";
 
 const Description = ({ description }) => {
   return (
