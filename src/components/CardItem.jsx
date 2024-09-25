@@ -1,4 +1,7 @@
 import PropTypes from "prop-types";
+
+import "./cardItem.scss";
+
 import Image from "../elements/Image";
 import Title from "../elements/Title";
 import Description from "../elements/Description";

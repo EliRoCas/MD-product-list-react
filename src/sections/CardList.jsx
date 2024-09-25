@@ -1,4 +1,6 @@
 import PropTypes from "prop-types";
+import "./cardList.scss";
+
 import CardItem from "../components/CardItem";
 
 const CardList = ({ cards }) => {
