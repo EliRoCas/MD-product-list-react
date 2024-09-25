@@ -2,9 +2,18 @@ import { useEffect, useState } from "react";
 // import PropTypes from "prop-types";
 import CardList from "./CardList";
 
+function getRandomNumbers(count, min, max) {
+  const randomNumbers = [];
+  for (let i = 0; i < count; i++) {
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    randomNumbers.push(randomNumber);
+  }
+  return randomNumbers;
+}
+
 const APICardList = () => {
   const digimonURL = "https://digimon-api.vercel.app/api/digimon";
-  const numberURL = "http://numbersapi.com/random/year?json";
+  const numberURL = "http://numbersapi.com/";
   const [cardData, setCardData] = useState([]);
 
   useEffect(() => {
@@ -12,26 +21,21 @@ const APICardList = () => {
       try {
         const digimonResponse = await fetch(digimonURL);
         const digimonData = await digimonResponse.json();
-        // console.log(digimonData);
         const mixDigimonData = digimonData.sort(() => Math.random() - 0.5);
         const selectDigimonData = mixDigimonData.slice(0, 4);
+        const randomNumbers = getRandomNumbers(4, 1, 100).join(",");
 
-        const numberResponse = await Promise.all([
-          fetch(numberURL),
-          fetch(numberURL),
-          fetch(numberURL),
-          fetch(numberURL),
-        ]);
-        const numberData = await Promise.all(
-          numberResponse.map((response) => response.json())
+        const numberData = await (
+          await fetch(numberURL + randomNumbers)
+        ).json();
+
+        const combinedData = Object.entries(numberData).map(
+          (number, index) => ({
+            img: selectDigimonData[index]?.img,
+            title: number[0] ? number[0].toString() : "Número no disponible",
+            description: number[1],
+          })
         );
-        // console.log(numberData);
-
-        const combinedData = numberData.map((number, index) => ({
-          img: selectDigimonData[index]?.img,
-          title: number.number ? number.number.toString() : "Año no disponible",
-          description: number.text,
-        }));
 
         setCardData(combinedData);
       } catch (error) {
@@ -39,7 +43,8 @@ const APICardList = () => {
       }
     };
 
-    fetchData();
+        fetchData();
+        console.log("fetchData");
   }, []);
 
   return (
