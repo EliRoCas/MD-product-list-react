@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./title.scss";
 
 const Title = ({ title }) => {
   return <h3 className="cardTitle">{title}</h3>;
