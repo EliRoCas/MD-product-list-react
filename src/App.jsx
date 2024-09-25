@@ -1,4 +1,7 @@
-import APICardList from "./sections/APICardList";
+import Layout from "./layout/Layout";
+import CardListScreen from "./screens/CardListScreen";
+
+// import APICardList from "./sections/APICardList";
 // import CardList from "./sections/CardList";
 
 // const cardData = [
@@ -27,9 +30,11 @@ import APICardList from "./sections/APICardList";
 function App() {
   return (
     <>
-      <h1>Random Rhapsody</h1>
-      {/* <CardList cards={cardData} /> */}
-      <APICardList />
+      <Layout>
+        {/* <CardList cards={cardData} /> */}
+        {/* <APICardList /> */}
+        <CardListScreen />
+      </Layout>
     </>
   );
 }

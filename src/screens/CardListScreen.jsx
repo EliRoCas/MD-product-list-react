@@ -1,19 +1,19 @@
-// import { useState } from "react";
+import { useState } from "react";
 
-// import APICardList from "../sections/APICardList";
-// import CardList from "../sections/CardList";
+import APICardList from "../sections/APICardList";
+import CardList from "../sections/CardList";
 
-// const CardListScreen = () => {
-//   const [cards, setCards] = useState([]);
-//   return (
-//     <div>
-//       {cards.length === 0 ? (
-//         <APICardList cards={cards} setCards={setCards} />
-//       ) : (
-//         <CardList cards={cards} />
-//       )}
-//     </div>
-//   );
-// };
+const CardListScreen = () => {
+  const [cards, setCards] = useState([]);
+  return (
+    <div>
+      {cards.length === 0 ? (
+        <APICardList cards={cards} setCards={setCards} />
+      ) : (
+        <CardList cards={cards} />
+      )}
+    </div>
+  );
+};
 
-// export default CardListScreen;
+export default CardListScreen;
