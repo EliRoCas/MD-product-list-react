@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
+import './button.scss';
 
 
 const Button = ({text, handleButton}) => {
     return (
         <>
-         <button onClick={handleButton} >{text}</button>   
+         <button className='cardBtn' onClick={handleButton} >{text}</button>   
         </>
     );
 };

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 
-import CardList from "./CardList";
 import { getData } from "../services/ApiService";
+import CardList from "./CardList";
+import Button from "../elements/Button";
 
 const APICardList = () => {
   const [cardData, setCardData] = useState([]);
@@ -20,9 +21,33 @@ const APICardList = () => {
     console.log("getCardData");
   }, []);
 
+  const addCards = async () => {
+    try {
+      const newCards = await getData();
+      setCardData((prevData) => [...prevData, ...newCards]);
+    } catch {
+      console.error("Error: ¡Upps! Algo salió mal.");
+    }
+  };
+
+  const deleteCard = () => {
+    setCardData([]);
+  };
+
+  function updateCard() {
+    deleteCard();
+    addCards();
+  }
+
   return (
     <div>
       <CardList cards={cardData} />
+
+      <section className="apiButtons">
+        <Button handleButton={updateCard} text={"Actualizar"} />
+        <Button handleButton={addCards} text={"Ver más"} />
+        <Button handleButton={deleteCard} text={"Eliminar"} />
+      </section>
     </div>
   );
 };

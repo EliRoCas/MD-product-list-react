@@ -6,6 +6,7 @@ import Image from "../elements/Image";
 import Title from "../elements/Title";
 import Description from "../elements/Description";
 
+
 const CardItem = ({ img, title, description }) => {
   return (
     <div className="cardItem">

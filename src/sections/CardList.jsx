@@ -26,6 +26,7 @@ CardList.propTypes = {
       description: PropTypes.string.isRequired,
     })
   ).isRequired,
+  onDeleteCard: PropTypes.func,
 };
 
 export default CardList;
