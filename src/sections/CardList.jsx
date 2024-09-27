@@ -1,4 +1,6 @@
 import PropTypes from "prop-types";
+import "./cardList.scss";
+
 import CardItem from "../components/CardItem";
 
 const CardList = ({ cards }) => {
@@ -24,6 +26,7 @@ CardList.propTypes = {
       description: PropTypes.string.isRequired,
     })
   ).isRequired,
+  onDeleteCard: PropTypes.func,
 };
 
 export default CardList;

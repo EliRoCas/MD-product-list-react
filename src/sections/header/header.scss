@@ -1,0 +1,36 @@
+.navbar {
+  background-color: #d8bccd;
+
+  .navbar-brand {
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+}
+#offcanvasNavbar-expand-lg {
+  background-color: #d8bccd;
+
+  .offcanvas-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+
+  button {
+    background-color: #dab5c9;
+    border: 1px solid #f8f9fa;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.3rem 1rem;
+    margin: 0.2rem 0.2rem;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: #c5a7b9;
+    }
+  }
+
+  .btn-close {
+    margin-left: 4rem;
+  }
+}

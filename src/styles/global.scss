@@ -1,9 +1,19 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+body,
+html,
 #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: #f8f9fa;
+}
+
+
+.apiButtons{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  align-items: center;
 }
