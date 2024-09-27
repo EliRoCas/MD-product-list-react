@@ -1,3 +1,4 @@
+
 import PropTypes from "prop-types";
 
 import "./cardItem.scss";
@@ -27,13 +28,16 @@ export default CardItem;
 
 // Prueba del componente (molecular) CardItem
 // import PropTypes from "prop-types";
+// import Image from "../elements/Image";
+// import Title from "../elements/Title";
+// import Description from "../elements/Description";
 
 // const CardItem = ({ img, title, description }) => {
 //   return (
-//     <div>
-//       <img src={img} alt={title} />
-//       <h3>{title}</h3>
-//       <p>{description}</p>
+//     <div className="cardItem">
+//       <Image img={img} alt={title} />
+//       <Title title={title} />
+//       <Description description={description} />
 //     </div>
 //   );
 // };
@@ -45,3 +49,6 @@ export default CardItem;
 // };
 
 // export default CardItem;
+
+
+
