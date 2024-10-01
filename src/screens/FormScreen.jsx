@@ -13,6 +13,7 @@ const FormScreen = () => {
   return (
     <div className="formScreen">
       <FormPage addItem={addItem} />
+      <CardList cards={items} />
       
     </div>
   );
