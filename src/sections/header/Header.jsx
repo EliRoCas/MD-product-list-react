@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 
@@ -28,9 +29,9 @@ function OffcanvasExample() {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Button>Home</Button>
-                <Button>Card</Button>
-                <Button>Form</Button>
+                <Link to="/"><Button>Home</Button></Link>
+                <Link to="/cards"><Button>Card</Button></Link> 
+                <Link to="/form"><Button>Form</Button></Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
