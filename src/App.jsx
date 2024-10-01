@@ -1,13 +1,15 @@
 
 import Layout from "./layout/Layout";
-import CardListScreen from "./screens/CardListScreen";
+import FormScreen from "./screens/FormScreen";
+// import CardListScreen from "./screens/CardListScreen";
 
 function App() {
   return (
     <Layout>
       {/* <CardList cards={cardData} /> */}
       {/* <APICardList /> */}
-      <CardListScreen />
+      {/* <CardListScreen /> */}
+      <FormScreen />
     </Layout>
 
   );
