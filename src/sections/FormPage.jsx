@@ -15,23 +15,9 @@ const FormPage = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form">
-      <Form
-        label="Título"
-        type="text"
-        placeholder="Título de tarea"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <Form
-        label="Descripción"
-        type="textarea"
-        placeholder="Descripción de tarea"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      />
-      <Button type="submit">Agregar Tarea</Button>
-    </form>
+
+    <Form />
+    
   );
 };
 
