@@ -1,5 +1,9 @@
+import { useState } from "react";
 import Layout from "./layout/Layout";
 import CardListScreen from "./screens/CardListScreen";
+import HomeScreen from "./screens/HomeScreen";
+import FormScreen from "./screens/FormScreen";
+
 
 // import APICardList from "./sections/APICardList";
 // import CardList from "./sections/CardList";
@@ -28,6 +32,32 @@ import CardListScreen from "./screens/CardListScreen";
 // ];
 
 function App() {
+  const [screen, setScreen] = useState("Home")
+
+  if (screen === "Home") {
+    return (
+      <Layout setScreen={setScreen}> 
+        <HomeScreen setScreen={setScreen} />
+      </Layout>
+    );
+  }
+
+  if (screen === "Card") {
+    return (
+      <Layout setScreen={setScreen}>  
+        <CardListScreen setScreen={setScreen} />
+      </Layout>
+    );
+  }
+
+  if (screen === "Form") {
+    return (
+      <Layout setScreen={setScreen}>  
+        <FormScreen setScreen={setScreen} />
+      </Layout>
+    );
+  }
+
   return (
     <>
       <Layout>
