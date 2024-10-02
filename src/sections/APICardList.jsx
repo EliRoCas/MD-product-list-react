@@ -16,12 +16,8 @@ const APICardList = () => {
     }
   };
 
-  const deleteCard = () => {
-    clearCards();
-  };
-
   const updateCard = () => {
-    deleteCard();
+    clearCards();
     addCards();
   };
 
@@ -30,9 +26,9 @@ const APICardList = () => {
       <CardList cards={cards} />
 
       <section className="apiButtons">
-        <Button handleButton={updateCard} text={"Actualizar"} />
+        <Button handleButton={updateCard} text={"Limpiar y Obtener"} />
         <Button handleButton={addCards} text={"Ver más"} />
-        <Button handleButton={deleteCard} text={"Limpiar"} />
+        <Button handleButton={clearCards} text={"Limpiar"} />
       </section>
     </div>
   );

@@ -26,8 +26,12 @@ export const CardProvider = ({ children }) => {
     setCards((prevCards) => [newCard, ...prevCards]);
   };
 
+  const clearCards = () => {
+    setCards([]);
+  };
+
   return (
-    <CardContext.Provider value={{ cards, addCard }}>
+    <CardContext.Provider value={{ cards, addCard, clearCards }}>
       {children}
     </CardContext.Provider>
   );
