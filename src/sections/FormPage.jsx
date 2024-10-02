@@ -1,12 +1,13 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useState } from "react";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { CardContext } from "../contexts/CardContext";
+import Form from "../components/Form";
+import { getData } from "../services/ApiService";
 
-
-import Form from '../components/Form';
-import {getData} from '../services/ApiService'
-
-
-const FormPage = ({ addItem }) => {
+const FormPage = () => {
+  const navigate = useNavigate();
+  const { addCard } = useContext(CardContext);
   const [useRandomImage, setUseRandomImage] = useState(false);
 
   const handleAddItem = async (item) => {
@@ -17,11 +18,15 @@ const FormPage = ({ addItem }) => {
         const digimonData = await getData();
         img = digimonData[0].img; // Selecciona la primera imagen aleatoria
       } catch (error) {
-        console.error("Error al obtener la imagen aleatoria de Digimon.", error);
+        console.error(
+          "Error al obtener la imagen aleatoria de Digimon.",
+          error
+        );
       }
     }
 
-    addItem({ ...item, img });
+    addCard({ ...item, img });
+    navigate("/cards");
   };
 
   return (
@@ -38,30 +43,5 @@ const FormPage = ({ addItem }) => {
     </div>
   );
 };
-
-FormPage.propTypes = {
-  addItem: PropTypes.func.isRequired,
-};
-
-
-
-
-// const FormPage = () => {
-//   const [title, setTitle] = useState('');
-//   const [description, setDescription] = useState('');
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     console.log({ title, description });
-//     setTitle('');
-//     setDescription('');
-//   };
-
-//   return (
-
-//     <Form />
-    
-//   );
-// };
 
 export default FormPage;
