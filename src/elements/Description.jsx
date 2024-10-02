@@ -1,3 +1,4 @@
+
 import PropTypes from "prop-types";
 import "./description.scss";
 
@@ -15,24 +16,26 @@ Description.propTypes = {
 
 export default Description;
 
+
+
 // Prueba de funcionamiento del elemento atómico Description
 // import PropTypes from "prop-types";
 
 // const Description = () => {
-//   return (
-//     <div className="cardDescription">
-//       <p>
-//         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, suscipit.
-//         Culpa amet quis aperiam, omnis expedita eos commodi voluptatibus
-//         architecto dolores blanditiis! Incidunt vitae cupiditate, repellat minus
-//         placeat autem itaque?
-//       </p>
-//     </div>
-//   );
-// };
+  // return (
+    // <div className="cardDescription">
+      // <p>
+        //Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, suscipit.
+        //Culpa amet quis aperiam, omnis expedita eos commodi voluptatibus
+        //architecto dolores blanditiis! Incidunt vitae cupiditate, repellat minus
+        //placeat autem itaque?
+      //</p>
+    //</div>
+  //);
+//};
 
-// Description.propTypes = {
-//   description: PropTypes.string.isRequired,
-// };
+//Description.propTypes = {
+  //description: PropTypes.string.isRequired,
+//};
 
-// export default Description;
+//export default Description;
