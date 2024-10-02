@@ -1,13 +1,13 @@
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-
+import PropTypes from "prop-types";
 import "./header.scss";
 
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
-function OffcanvasExample() {
+function OffcanvasExample({setScreen}) {
   const expand = "lg";
 
   return (
@@ -28,9 +28,9 @@ function OffcanvasExample() {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Button>Home</Button>
-                <Button>Card</Button>
-                <Button>Form</Button>
+                <Button onClick={() => setScreen("Home")}>Home</Button>
+                <Button onClick={() => setScreen("Card")}>Card</Button>
+                <Button onClick={() => setScreen("Form")}>Form</Button>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
@@ -39,5 +39,9 @@ function OffcanvasExample() {
     </>
   );
 }
+
+OffcanvasExample.propTypes = {
+  setScreen: PropTypes.func.isRequired, 
+};
 
 export default OffcanvasExample;
