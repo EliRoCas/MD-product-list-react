@@ -1,5 +1,5 @@
 const digimonURL = "https://digimon-api.vercel.app/api/digimon";
-const numberURL = "/api/";
+const numberURL = "http://numbersapi.com/";
 
 export const getData = async () => {
   try {
