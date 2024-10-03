@@ -1,23 +1,12 @@
-import { useState } from 'react';
-import FormPage from '../sections/FormPage'
-import CardList from '../sections/CardList'
 
+import FormPage from "../sections/FormPage";
 
 const FormScreen = () => {
-  const [items, setItems] = useState([]);
-
-  const addItem = (item) => {
-    setItems([...items, item]);
-  };
-
   return (
     <div className="formScreen">
-      <FormPage addItem={addItem} />
-      <CardList cards={items} />
-      
+      <FormPage />
     </div>
   );
 };
 
 export default FormScreen;
-

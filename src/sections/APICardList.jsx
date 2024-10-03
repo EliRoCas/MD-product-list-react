@@ -1,52 +1,34 @@
-import { useEffect, useState } from "react";
-
+import { useContext } from "react";
+import { CardContext } from "../contexts/CardContext";
 import { getData } from "../services/ApiService";
 import CardList from "./CardList";
 import Button from "../elements/Button";
 
 const APICardList = () => {
-  const [cardData, setCardData] = useState([]);
-
-  useEffect(() => {
-    const getCardData = async () => {
-      try {
-        const combinedData = await getData();
-        setCardData(combinedData);
-      } catch (error) {
-        console.error("Error: ¡Upps! Algo salió mal.", error);
-      }
-    };
-
-    getCardData();
-    console.log("getCardData");
-  }, []);
+  const { cards, addCard, clearCards } = useContext(CardContext);
 
   const addCards = async () => {
     try {
       const newCards = await getData();
-      setCardData((prevData) => [...prevData, ...newCards]);
-    } catch {
-      console.error("Error: ¡Upps! Algo salió mal.");
+      newCards.forEach((c) => addCard(c));
+    } catch (error) {
+      console.error("Error: ¡Upps! Algo salió mal.", error);
     }
   };
 
-  const deleteCard = () => {
-    setCardData([]);
-  };
-
-  function updateCard() {
-    deleteCard();
+  const updateCard = () => {
+    clearCards();
     addCards();
-  }
+  };
 
   return (
     <div>
-      <CardList cards={cardData} />
+      <CardList cards={cards} />
 
       <section className="apiButtons">
-        <Button handleButton={updateCard} text={"Actualizar"} />
+        <Button handleButton={updateCard} text={"Limpiar y Obtener"} />
         <Button handleButton={addCards} text={"Ver más"} />
-        <Button handleButton={deleteCard} text={"Eliminar"} />
+        <Button handleButton={clearCards} text={"Limpiar"} />
       </section>
     </div>
   );
