@@ -10,16 +10,4 @@
   background-color: #e3c0d3;
   box-shadow: 0 0 15px #000000;
   transition: all 0.3s ease;
-
-  @media (max-width: 1200px) {
-    width: calc(33.33% - 1rem);
-  }
-
-  @media (max-width: 800px) {
-    width: calc(50% - 1rem); //
-  }
-
-  @media (max-width: 600px) {
-    width: 100%;
-  }
 }
