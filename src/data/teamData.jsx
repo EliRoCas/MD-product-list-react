@@ -1,6 +1,6 @@
 const teamData = [
     {
-        img: "/src/assets/bellota.jpeg",
+        img: "./src/assets/bellota.jpeg",
         title: "Eliana Rosero",
         description: "Desarrolladora",
         link: "https://github.com/EliRoCas",
@@ -9,7 +9,7 @@ const teamData = [
         linkedinText: "LinkedIn",
     },
     {
-        img: "/src/assets/blossom.jpeg",
+        img: "./src/assets/blossom.jpeg",
         title: "Elvira Cujar",
         description: "Desarrolladora",
         link: "https://github.com/meclozano",
@@ -18,7 +18,7 @@ const teamData = [
         linkedinText: "LinkedIn",
     },
     {
-        img: "/src/assets/bubbles.jpeg",
+        img: "./src/assets/bubbles.jpeg",
         title: "Isabella Taborda",
         description: "Desarrolladora",
         link: "https://github.com/BellaTV",
