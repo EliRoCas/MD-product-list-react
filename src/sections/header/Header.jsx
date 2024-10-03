@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import PropTypes from "prop-types";
@@ -9,11 +8,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
-
-function OffcanvasExample() {
+function OffcanvasExample({ setScreen }) {
   const [show, setShow] = useState(false);
-
-function OffcanvasExample({setScreen}) {
 
   const expand = "lg";
 
@@ -43,13 +39,30 @@ function OffcanvasExample({setScreen}) {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-              
-<Button onClick={() => { handleClose(); setScreen("Home"); }}>Home</Button>
-<Button onClick={() => { handleClose(); setScreen("Card"); }}>Card</Button>
-<Button onClick={() => { handleClose(); setScreen("Form"); }}>Form</Button>
-
-
-
+                <Button
+                  onClick={() => {
+                    handleClose();
+                    setScreen("Home");
+                  }}
+                >
+                  Home
+                </Button>
+                <Button
+                  onClick={() => {
+                    handleClose();
+                    setScreen("Card");
+                  }}
+                >
+                  Card
+                </Button>
+                <Button
+                  onClick={() => {
+                    handleClose();
+                    setScreen("Form");
+                  }}
+                >
+                  Form
+                </Button>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
@@ -60,7 +73,7 @@ function OffcanvasExample({setScreen}) {
 }
 
 OffcanvasExample.propTypes = {
-  setScreen: PropTypes.func.isRequired, 
+  setScreen: PropTypes.func.isRequired,
 };
 
 export default OffcanvasExample;

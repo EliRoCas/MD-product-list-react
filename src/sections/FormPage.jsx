@@ -1,22 +1,19 @@
+import PropTypes from "prop-types";
 
-import PropTypes from 'prop-types';
+import Form from "../components/Form";
 
-import Form from '../components/Form';
+import "./formpage.scss";
 
-import './formpage.scss';
-
-const FormPage = ({ addItem }) => {
-
+const FormPage = ({ setScreen }) => {
   return (
     <div className="formPage">
-      <Form addItem={addItem} />
+      <Form setScreen={setScreen} />
     </div>
   );
 };
 
-
 FormPage.propTypes = {
-  addItem: PropTypes.func.isRequired,
+  setScreen: PropTypes.func.isRequired,
 };
 
 export default FormPage;
