@@ -1,6 +1,9 @@
+import Bubbles from "../assets/bubbles.jpeg";
+import Blossom from "../assets/Blossom.jpeg";
+import bellota from "../assets/bellota.jpeg";
 const teamData = [
     {
-        img: "./src/assets/bellota.jpeg",
+        img: bellota,
         title: "Eliana Rosero",
         description: "Desarrolladora",
         link: "https://github.com/EliRoCas",
@@ -9,7 +12,7 @@ const teamData = [
         linkedinText: "LinkedIn",
     },
     {
-        img: "./src/assets/blossom.jpeg",
+        img: Blossom,
         title: "Elvira Cujar",
         description: "Desarrolladora",
         link: "https://github.com/meclozano",
@@ -18,7 +21,7 @@ const teamData = [
         linkedinText: "LinkedIn",
     },
     {
-        img: "./src/assets/bubbles.jpeg",
+        img: Bubbles,
         title: "Isabella Taborda",
         description: "Desarrolladora",
         link: "https://github.com/BellaTV",
