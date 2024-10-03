@@ -1,6 +1,6 @@
-import Bubbles from "../assets/bubbles.jpeg";
-import Blossom from "../assets/Blossom.jpeg";
-import bellota from "../assets/bellota.jpeg";
+import Bubbles from "/src/assets/Bubbles.jpeg";
+import Blossom from "/src/assets/Blossom.jpeg";
+import bellota from "/src/assets/bellota.jpeg";
 const teamData = [
     {
         img: bellota,
