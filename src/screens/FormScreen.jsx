@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import FormPage from "../sections/FormPage";
 
-const FormScreen = ({ setScreen }) => {
+const FormScreen = ({setScreen}) => {
+
   return (
     <div className="formScreen">
       <FormPage setScreen={setScreen} />
@@ -9,7 +10,9 @@ const FormScreen = ({ setScreen }) => {
   );
 };
 
-FormScreen.propTypes = {
+
+FormScreen.propTypes = {  
   setScreen: PropTypes.func.isRequired,
-};
+};  
+
 export default FormScreen;

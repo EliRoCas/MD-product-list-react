@@ -1,4 +1,6 @@
-import { BrowserRouter } from "react-router-dom";
+
+
+import { BrowserRouter} from "react-router-dom";
 
 import { useState } from "react";
 
@@ -15,17 +17,19 @@ function App() {
   let screenRoute = <HomeScreen setScreen={setScreen} />;
 
   if (screen === "Card") {
-    screenRoute = <CardListScreen setScreen={setScreen} />;
+    screenRoute = <CardListScreen setScreen={setScreen} />
   }
 
   if (screen === "Form") {
-    screenRoute = <FormScreen setScreen={setScreen} />;
+    screenRoute = <FormScreen setScreen={setScreen} />
   }
 
   return (
     <BrowserRouter>
       <CardProvider>
-        <Layout setScreen={setScreen}>{screenRoute}</Layout>
+        <Layout setScreen={setScreen}>
+          {screenRoute}
+        </Layout>
       </CardProvider>
     </BrowserRouter>
   );
