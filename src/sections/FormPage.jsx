@@ -1,47 +1,22 @@
-import { useState } from "react";
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { CardContext } from "../contexts/CardContext";
-import Form from "../components/Form";
-import { getData } from "../services/ApiService";
 
-const FormPage = () => {
-  const navigate = useNavigate();
-  const { addCard } = useContext(CardContext);
-  const [useRandomImage, setUseRandomImage] = useState(false);
+import PropTypes from 'prop-types';
 
-  const handleAddItem = async (item) => {
-    let img = item.image;
+import Form from '../components/Form';
 
-    if (useRandomImage) {
-      try {
-        const digimonData = await getData();
-        img = digimonData[0].img; // Selecciona la primera imagen aleatoria
-      } catch (error) {
-        console.error(
-          "Error al obtener la imagen aleatoria de Digimon.",
-          error
-        );
-      }
-    }
+import './formpage.scss';
 
-    addCard({ ...item, img });
-    navigate("/cards");
-  };
+const FormPage = ({ addItem }) => {
 
   return (
     <div className="formPage">
-      <Form addItem={handleAddItem} />
-      <label>
-        <input
-          type="checkbox"
-          checked={useRandomImage}
-          onChange={() => setUseRandomImage(!useRandomImage)}
-        />
-        Usar imagen aleatoria de Digimon
-      </label>
+      <Form addItem={addItem} />
     </div>
   );
+};
+
+
+FormPage.propTypes = {
+  addItem: PropTypes.func.isRequired,
 };
 
 export default FormPage;
