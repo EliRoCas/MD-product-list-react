@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import { CardContext } from "../contexts/CardContext";
+import PropTypes from "prop-types";
 import Form from "../components/Form";
 import { getData } from "../services/ApiService";
 
-const FormPage = () => {
-  const navigate = useNavigate();
+const FormPage = ({ setScreen }) => {
   const { addCard } = useContext(CardContext);
   const [useRandomImage, setUseRandomImage] = useState(false);
 
@@ -26,7 +25,7 @@ const FormPage = () => {
     }
 
     addCard({ ...item, img });
-    navigate("/cards");
+    setScreen("Card");
   };
 
   return (
@@ -42,6 +41,10 @@ const FormPage = () => {
       </label>
     </div>
   );
+};
+
+FormPage.propTypes = {
+  setScreen: PropTypes.func.isRequired,
 };
 
 export default FormPage;
