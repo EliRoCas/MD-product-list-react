@@ -5,7 +5,8 @@ import { CardContext } from "../contexts/CardContext";
 
 import Input from "../elements/Input";
 import Button from "../elements/Button";
-import { getData } from "../services/ApiService";
+import { getDigimonImages } from "../services/ApiService";
+// import { getData } from "../services/ApiService";
 
 import "./form.scss";
 
@@ -20,7 +21,7 @@ const Form = ({ setScreen }) => {
     const fetchRandomImage = async () => {
       if (useRandomImage) {
         try {
-          const digimonData = await getData();
+          const digimonData = await getDigimonImages();
           setImage(digimonData[0].img); // Selecciona la primera imagen aleatoria
         } catch (error) {
           console.error(
