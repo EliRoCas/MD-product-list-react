@@ -6,7 +6,7 @@ export default function App() {
     >
       &copy; {new Date().getFullYear()} Copyright:{" "}
       <a className="text-dark" href="">
-        MD - KeyCode - Grupo 10
+        MD - KeyCode - Grupo 8
       </a>
     </div>
   );
