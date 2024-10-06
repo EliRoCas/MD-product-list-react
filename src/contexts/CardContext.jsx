@@ -1,8 +1,8 @@
-import { createContext, useState } from "react";
-import { useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 
 import PropTypes from "prop-types";
-import { getData } from "../services/ApiService";
+// import { getData } from "../services/ApiService";
+import { getLocalData } from "../services/localService/localApiService";
 
 export const CardContext = createContext();
 
@@ -12,7 +12,7 @@ export const CardProvider = ({ children }) => {
   useEffect(() => {
     const getCardData = async () => {
       try {
-        const combinedData = await getData();
+        const combinedData = await getLocalData();
         setCards(() => [...combinedData]);
       } catch (error) {
         console.error("Error: ¡Upps! Algo salió mal.", error);
